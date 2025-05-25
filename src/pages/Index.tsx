@@ -17,12 +17,24 @@ import CoinFlip from '../components/games/CoinFlip';
 import DiceRoller from '../components/games/DiceRoller';
 import Hangman from '../components/games/Hangman';
 import Sudoku from '../components/games/Sudoku';
+import Minesweeper from '../components/games/Minesweeper';
 import SlidingPuzzle from '../components/games/SlidingPuzzle';
+import WordSearch from '../components/games/WordSearch';
+import TowerOfHanoi from '../components/games/TowerOfHanoi';
 import FlappyBird from '../components/games/FlappyBird';
-import ClickTarget from '../components/games/ClickTarget';
-import BalloonPop from '../components/games/BalloonPop';
 import Asteroids from '../components/games/Asteroids';
+import SpaceInvaders from '../components/games/SpaceInvaders';
 import DinoGame from '../components/games/DinoGame';
+import AvoidFallingObjects from '../components/games/AvoidFallingObjects';
+import ClickTarget from '../components/games/ClickTarget';
+import SlotMachine from '../components/games/SlotMachine';
+import BalloonPop from '../components/games/BalloonPop';
+import NumberGuessing from '../components/games/NumberGuessing';
+import ColorMatch from '../components/games/ColorMatch';
+import TypingSpeedTest from '../components/games/TypingSpeedTest';
+import MusicMemory from '../components/games/MusicMemory';
+import SimonSays from '../components/games/SimonSays';
+import HelixJump from '../components/games/HelixJump';
 
 const Index = () => {
   const [currentGame, setCurrentGame] = useState<string | null>(null);
@@ -57,39 +69,42 @@ const Index = () => {
         return <Hangman />;
       case 'sudoku':
         return <Sudoku />;
+      case 'minesweeper':
+        return <Minesweeper />;
       case 'sliding-puzzle':
         return <SlidingPuzzle />;
+      case 'word-search':
+        return <WordSearch />;
+      case 'tower-of-hanoi':
+        return <TowerOfHanoi />;
       case 'flappy-bird':
         return <FlappyBird />;
-      case 'click-target':
-        return <ClickTarget />;
-      case 'balloon-pop':
-        return <BalloonPop />;
       case 'asteroids':
         return <Asteroids />;
+      case 'space-invaders':
+        return <SpaceInvaders />;
       case 'dino-game':
         return <DinoGame />;
-      // Coming soon games - show placeholder
-      case 'minesweeper':
-      case 'word-search':
-      case 'tower-of-hanoi':
-      case 'space-invaders':
       case 'avoid-falling-objects':
+        return <AvoidFallingObjects />;
+      case 'click-target':
+        return <ClickTarget />;
       case 'slot-machine':
+        return <SlotMachine />;
+      case 'balloon-pop':
+        return <BalloonPop />;
       case 'number-guessing':
+        return <NumberGuessing />;
       case 'color-match':
+        return <ColorMatch />;
       case 'typing-speed-test':
+        return <TypingSpeedTest />;
       case 'music-memory':
+        return <MusicMemory />;
+      case 'simon-says':
+        return <SimonSays />;
       case 'helix-jump':
-        return (
-          <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-600 to-gray-800 text-white p-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-              <h1 className="text-4xl font-bold mb-6">🚧 Coming Soon!</h1>
-              <p className="text-xl mb-4">This game is being developed</p>
-              <p className="text-gray-300">Check back later for updates!</p>
-            </div>
-          </div>
-        );
+        return <HelixJump />;
       default:
         return <GameMenu onSelectGame={setCurrentGame} />;
     }
